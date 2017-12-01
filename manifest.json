@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "copy",
+  "description": "copy and paste",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ]
+,
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "html/popup.html"
+  },
+
+  "background": {
+    "scripts": ["script/background.js"],
+    "persistent": true
+  }
+
+}
