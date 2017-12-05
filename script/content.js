@@ -29,18 +29,20 @@ function listener(e){
         chrome.storage.local.get("copyList",(items)=>{
             let aCopyList;
             if(items.copyList){
-                aCopyList = JSON.parse(items["copyList"]);
+                //aCopyList = JSON.parse(items["copyList"]);
+                aCopyList = items.copyList;
             }else{
                 aCopyList = [];
             }
 
             aCopyList.push(oSendObj);
 
-            chrome.storage.local.set({copyList:JSON.stringify(aCopyList)},()=>{
+            chrome.storage.local.set({copyList:aCopyList},()=>{
                 if(chrome.runtime.lastError){
                     console.warn("storage set error");
                 }
             });
+
         });
 
     }else{

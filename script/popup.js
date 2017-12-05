@@ -27,7 +27,7 @@ function getData(){
     return new Promise((resolve,reject)=>{
         chrome.storage.local.get("copyList",(items)=>{
             if(items.copyList){
-                resolve(JSON.parse(items.copyList));
+                resolve(items.copyList);
             }else{
                 reject();
             }
