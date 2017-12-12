@@ -6,12 +6,14 @@ let bExpandFlag = false;
 function listener(e){
     let oSelection = window.getSelection();
     let sData = oSelection.toString();
-    let sTimestamp = Date.now();
-    let sBaseUri = oSelection.anchorNode.baseURI;
+    let nTimestamp = Date.now();
+    let sBaseUri = document.URL;
+    let sDocumentTitle = document.title;
     let oSendObj = {};
-    oSendObj.sTimestamp= sTimestamp;
+    oSendObj.nTimestamp= nTimestamp;
     oSendObj.sData = sData;
     oSendObj.sUri = sBaseUri;
+    oSendObj.sTitle = sDocumentTitle;
 
     if(!bDoubleFlag){
         bDoubleFlag = true;
@@ -29,7 +31,6 @@ function listener(e){
         chrome.storage.local.get("copyList",(items)=>{
             let aCopyList;
             if(items.copyList){
-                //aCopyList = JSON.parse(items["copyList"]);
                 aCopyList = items.copyList;
             }else{
                 aCopyList = [];

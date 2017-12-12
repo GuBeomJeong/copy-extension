@@ -3,24 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" sype="text/css" href = "/style/snackbar.css">
     <style>
-        body{
-            width:300px;
-            height:300px;
+        body {
+            width: 400px;
+            height: 500px;
         }
+
+        #head{
+            text-align: center;
+        }
+
+        #copy_container{
+            width:400px;
+            height: 500px;
+            /*margin-left:40px;*/
+            /*margin-right: 40px;*/
+
+        }
+
+        .date_separation{
+            text-align: center;
+            color: lightslategrey;
+        }
+
+        .copy_data {
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            word-wrap:break-word;
+        }
+
+        #copy_container .copy_content_hide{
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            cursor: pointer;
+        }
+
+        #copy_container .copy_uri_hide{
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            cursor: pointer;
+            color: steelblue;
+        }
+
+        #copy_container .copy_uri{
+
+        }
+
+        #copy_container .copy_content{
+            color: slategrey;
+        }
+
+        .page_btn_hide{
+            display:none;
+        }
+
+        #next_page_btn{
+            width: 25px;
+            height: 15px;
+            cursor:pointer;
+            content: url("../img/right.png");
+        }
+
+        #pre_page_btn{
+            width:25px;
+            height:15px;
+            cursor:pointer;
+            content: url("../img/left.png");
+        }
+
+        #head2{
+            /*display: inline;*/
+            height: 20px;
+        }
+
+        #delete_btn{
+            width:25px;
+            height:20px;
+            cursor: pointer;
+            content:url("../img/trash.png");
+        }
+
+        .content_copy_img{
+            width:15px;
+            height:15px;
+            cursor: pointer;
+            content:url("../img/copy-icon.png");
+        }
+
     </style>
 </head>
 <body>
+<h1 id="head">Copy and Paste</h1>
+<div id="head2">
+    <input id="search_input">
 
-<div >
-    <ul id ="app">
+    <span id="page_info">
+        <img id = pre_page_btn>
+        <em id="page_num">1</em>/<em id ="total_page_num">1</em>
+        <img id = next_page_btn >
+        <img id="delete_btn">
+    </span>
+</div>
 
-    </ul>
-    <button id="delete_btn">삭제</button>
+<div>
+    <div id="copy_container">
+
+    </div>
 
 </div>
 
+<div id="snackbar">Copy that</div>
+
 </body>
 <script src="/script/popup.js"></script>
+<script src="/script/lib/fuse.min.js"></script>
 
 </html>

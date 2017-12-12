@@ -18,7 +18,9 @@
 
   "background": {
     "scripts": ["script/background.js"],
-    "persistent": true
-  }
+    "persistent": false
+  },
+
+  "web_accessible_resources": ["img/left.png","img/right.png,script/lib/fuse.min.js"]
 
 }
